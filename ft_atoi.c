@@ -11,27 +11,30 @@
 /* ************************************************************************** */
 
 
-#ifndef libft
+#include "libft.h"
 
-#define libft
+int		ft_atoi(const char *str)
+{
+	size_t i;
+	size_t z;
+	size_t sign;
 
-#include <stdlib.h>
-
-#include <unistd.h>
-
-size_t  ft_strlen(const char *s);
-size_t	ft_strlcat(char *dst, const char *src, size_t size);
-
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-int     ft_islower(int c);
-int     ft_isspace(int c);
-int     ft_isupper(int c);
-
-int		ft_atoi(const char *str);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-
-int		ft_memcmp(const void *s1, const void *s2, size_t n);
+	i = 0;
+	z = 0;
+	sign = 1;
+	while (ft_isspace(str[z]))
+		z++;
+	if (str == '\0')
+		return (0);
+	if (str[z] == '-' || str[z] == '+')
+	{
+		sign = (str[z] == '-' ? -1 : 1);
+		z++;
+	}
+	while (str[z] && str[z] >= '0' && str[z] <= '9')
+	{
+		i = i * 10 + str[z] - '0';
+		z++;
+	}
+	return (i * sign);
+}

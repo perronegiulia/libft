@@ -11,27 +11,27 @@
 /* ************************************************************************** */
 
 
-#ifndef libft
+#include "libft.h"
 
-#define libft
+size_t		ft_strlcat(char *dst, const char *src, size_t size)
+{
+	size_t		altdst;
+	size_t		altsrc;
+	size_t		i;
 
-#include <stdlib.h>
-
-#include <unistd.h>
-
-size_t  ft_strlen(const char *s);
-size_t	ft_strlcat(char *dst, const char *src, size_t size);
-
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-int     ft_islower(int c);
-int     ft_isspace(int c);
-int     ft_isupper(int c);
-
-int		ft_atoi(const char *str);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-
-int		ft_memcmp(const void *s1, const void *s2, size_t n);
+	if (!size)
+		return (ft_strlen(dst) + size);
+	altsrc = ft_strlen(src);
+	i = 0;
+	while (dst[i] && i < size)
+		i++;
+	altdst = i;
+	while (src[i - altdst] && i < size - 1)
+	{
+		dst[i] = src[i - altdst];
+		i++;
+	}
+	if (altdst < size)
+		dst[i] = '\0';
+	return (altdst + altsrc);
+}
