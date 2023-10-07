@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmaia-pe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 20:14:58 by gmaia-pe          #+#    #+#             */
-/*   Updated: 2023/10/07 16:08:40 by gmaia-pe         ###   ########.fr       */
+/*   Created: 2023/10/03 21:09:16 by gmaia-pe          #+#    #+#             */
+/*   Updated: 2023/10/03 21:24:02 by gmaia-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	unsigned char	*source1;
+	unsigned char	*source2;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	source1 = (unsigned char*)s1;
+	source2 = (unsigned char*)s2;
+	while (n > 0)
+	{
+		if (*source1 != *source2)
+			return (*source1 - *source2);
+		source1++;
+		source2++;
+		n--;
+	}
+	return (0);
 }

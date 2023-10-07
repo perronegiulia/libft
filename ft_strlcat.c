@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmaia-pe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 21:09:16 by gmaia-pe          #+#    #+#             */
-/*   Updated: 2023/10/03 21:24:02 by gmaia-pe         ###   ########.fr       */
+/*   Updated: 2023/10/07 16:07:39 by gmaia-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-size_t		ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *restrict src, size_t sz)
 {
-	size_t		altdst;
-	size_t		altsrc;
-	size_t		i;
+	size_t	dst_len;
+	size_t	src_len;
 
-	if (!size)
-		return (ft_strlen(dst) + size);
-	altsrc = ft_strlen(src);
-	i = 0;
-	while (dst[i] && i < size)
-		i++;
-	altdst = i;
-	while (src[i - altdst] && i < size - 1)
-	{
-		dst[i] = src[i - altdst];
-		i++;
-	}
-	if (altdst < size)
-		dst[i] = '\0';
-	return (altdst + altsrc);
+	src_len = ft_strlen(src);
+	dst_len = ft_strlen(dst);
+	if (sz <= dst_len)
+		return (src_len + sz);
+	if (src_len < sz - dst_len)
+		ft_strlcpy(dst + dst_len, src, src_len + 1);
+	else
+		ft_strlcpy(dst + dst_len, src, sz - dst_len);
+	return (dst_len + src_len);
 }
