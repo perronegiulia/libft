@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmaia-pe <gmaia-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/07 19:35:35 by gmaia-pe          #+#    #+#             */
-/*   Updated: 2023/10/07 20:17:11 by gmaia-pe         ###   ########.fr       */
+/*   Created: 2023/10/07 20:19:18 by gmaia-pe          #+#    #+#             */
+/*   Updated: 2023/10/07 20:34:10 by gmaia-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	i;
+	size_t		i;
+	int			length;
+	char		*large;
+	char		*small;
 
-	i = ft_strlen(s);
-	if (s[i] == (unsigned char)c)
-		return ((char *)&s[i]);
-	while (i--)
+	if (*little == '\0')
+		return ((char *)big);
+	large = (char *)big;
+	small = (char *)little;
+	i = 0;
+	length = ft_strlen(small);
+	while (large[i] != '\0' && (i + length) <= len)
 	{
-		if (s[i] == (unsigned char)c)
-			return ((char *)&s[i]);
+		if (ft_strncmp((large + i), small, length) == 0)
+		{
+			return (large + i);
+		}
+		i++;
 	}
-	return (0);
+	return (NULL);
 }
