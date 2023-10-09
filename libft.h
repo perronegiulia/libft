@@ -6,7 +6,7 @@
 /*   By: gmaia-pe <gmaia-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 21:09:16 by gmaia-pe          #+#    #+#             */
-/*   Updated: 2023/10/07 20:33:55 by gmaia-pe         ###   ########.fr       */
+/*   Updated: 2023/10/07 20:43:24 by gmaia-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,6 @@ int		ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memset(void *b, int c, size_t len);
 #endif
