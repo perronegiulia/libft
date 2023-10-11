@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmaia-pe <gmaia-pe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 21:09:16 by gmaia-pe          #+#    #+#             */
-/*   Updated: 2023/10/10 17:18:23 by gmaia-pe         ###   ########.fr       */
+/*   Updated: 2023/10/11 21:36:45 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ void	*ft_memchr(const void *s, int c, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(char *src);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
