@@ -1,3 +1,11 @@
 memset - preenche um bloco de memoria com um valor especifico, inicializar um array ou um buffer de memoria com um valor especifico. size_t num é o numero de bytes que serao preenchidos no bloco de memoria determinado.
 
 memcmp - compara blocos de memoria, geralmente arrays, e determinar se eles sao iguais ou nao. compara byte a byte e retorna (-1) se o ptr1 for menor que o ptr2, (0) se forem iguais, (1) se o ptr1 for maior que o ptr2.
+
+bzero - zera (define como zero) um bloco de memoria. escreve o valor zero em cada byte de memoria.
+
+memcpy - copia um bloco de memoria de um source para um destino, sem modificar o conteudo original. voce define o numero de bytes que quer copiar atraves do n. a funcao retorna o destino. copia n bytes de dource para dest.
+
+memmove - copia um bloco de memoria de um src para um dest e lida com blocos de memoria que se sobrepoem de forma segura, diferente da memcpy.
+
+memchr - procura a primeira ocorrencia de um byte especifico em um bloco de memoria. retorna um ponteiro para essa ocorrencia ou um ponteiro nulo caso nao seja econtrado.
