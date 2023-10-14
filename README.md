@@ -1,5 +1,5 @@
 # libft
-My libft
-- [x] Basic functions
-- [ ] Additional functions
-- [ ] Bonus part 😀
+
+- [x] Basic functions 🧐
+- [x] Additional functions 🥵
+- [ ] Bonus part 🥸
