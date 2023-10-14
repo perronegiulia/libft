@@ -44,3 +44,8 @@ ft_striteri - usada pra iterar sobre cada caractere de uma string enqaunto aplic
 
 ft_putchar_fd - outputa o caractere c para o file descriptor.
 
+ft_putstr_fd - imprime uma string s em um arquivo (fd).
+
+ft_putendl_fd - imprime uma string s em um arquivo fd seguido de uma quebra de linha (\n).
+
+ft_putnbr_fd  - imprime um nemor inteiro em um arquivo (fd). envolve a conversao do numeor inteiro em uma string e depois escreve essa string no arquivo especificado pelo file descriptor.
