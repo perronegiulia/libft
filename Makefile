@@ -6,14 +6,14 @@
 #    By: gmaia-pe <gmaia-pe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 17:50:19 by gmaia-pe          #+#    #+#              #
-#    Updated: 2023/10/14 12:53:37 by gmaia-pe         ###   ########.fr        #
+#    Updated: 2023/10/14 15:26:30 by gmaia-pe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-CFILES	= $(wildcard ft_*.c)
+CFILES	= $(filter-out $(wildcard *_bonus.c), $(wildcard *.c))
 OBJS	= $(CFILES:.c=.o)
-BONUS_CFILES	= $(wildcard *_bonus.c)
+BONUS_CFILES	= $(wildcard *_bns.c)
 BONUS_OBJS	= $(BONUS_CFILES:.c=.o)
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
