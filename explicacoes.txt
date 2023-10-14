@@ -4,8 +4,43 @@ memcmp - compara blocos de memoria, geralmente arrays, e determinar se eles sao 
 
 bzero - zera (define como zero) um bloco de memoria. escreve o valor zero em cada byte de memoria.
 
-memcpy - copia um bloco de memoria de um source para um destino, sem modificar o conteudo original. voce define o numero de bytes que quer copiar atraves do n. a funcao retorna o destino. copia n bytes de dource para dest.
+memcpy - copia um bloco de memoria de um source para um destino, sem modificar o conteudo original. voce define o numero de bytes que quer copiar atraves do n. a funcao retorna o destino. copia n bytes de source para dest.
 
 memmove - copia um bloco de memoria de um src para um dest e lida com blocos de memoria que se sobrepoem de forma segura, diferente da memcpy.
 
 memchr - procura a primeira ocorrencia de um byte especifico em um bloco de memoria. retorna um ponteiro para essa ocorrencia ou um ponteiro nulo caso nao seja econtrado.
+
+strlcpy - copia a string de src para o dest, garantindo que o tamanho maximo do dest nao seja excedido, o que ajuda a evitar o "estouro" do buffer.
+
+strlcat - concatena a string src `a string de dest, garantindo que o tamanho do dest nao seja excedido.
+
+strchr - encontra a primeira ocorrencia de um caractere especifocp em uma strinf e retorna um ponteiro pra primeira ococorrencia desse caractere ou NULL se nao encontrar.
+
+strrchr - encontra a ultima ocorrencia de um caractere especifico na string , retorna um ponteiro para essa ultima ocorrencia ou nulo se nao encontrar.
+
+strncmp - compara os primeiros N caracteres de duas strings. permite que especifique um numero maximo de caracteres a serem comparados, retorna 0 se forem iguais nos primeiros N caracteres, -1 se a primeira for menor que a segunda, 1 se a primeira for maior que a segunda.
+
+strnstr - encontra a primeira ocorrencia do caracter nulo da string litlle na string big, sendo que sao pesquisados len caractere. os caracteres que aparecem depois do '/0' nao sao olhados.
+
+atoi - converte um string em um valor inteiro, ascii to int.
+
+calloc - aloca memoria dinamicamente para um determinado numero de objetos inciliazar essa memoria com zeros. normalmente usada para arrays e estruturas de dados.
+
+strdup - permite criar uma copia dinamicamente alocada de uma string. aloca a memoria para a nova string e copia o conteudo da string original pra memoria alocada.
+
+substr - aloca dinamicamente a memoria para a subcadeia, copia os caracteres da string src para a memoria alocada e adiciona um caractere nulo pra garantir que a subcadeia seja uma string C valida.
+
+strjoin - aloca dinamicamente memoria sufuciente para a string resultante que contera a concatenacao se str1 e str2. depois copia a primeira string para a memoria alocada unsando strcpy e concatena a segunda usando strcat.
+
+strtrim - Ela retorna uma copia da s1 removendo os caracteres especificados em set do inicio e do fim da string. aloca memória dinamicamente para a string resultante, copia a parte não vazia da string original e adiciona um caractere nulo no final para garantir que a string resultante seja uma string C válida.
+
+ft_split - divide uma string em substring com base em caractere delimitador ou um separador.
+
+ft_itoa - passa um inteiro para um char, aloca dinamicamente memoria suficiente par armazenar a representacao da string do numero inteiro.
+
+ft_strmapi - mapeia cada caractere de uma string, aloca memoria e aplica funcao f a cada caractere da string s e passa o index como primeiro argumento pra criar uma nova string, resultante de sucessivas aplicacoes da funcao f.
+
+ft_striteri - usada pra iterar sobre cada caractere de uma string enqaunto aplica uma funcao personalizada que leva em consideracao o indice de cada caractere na string.
+
+ft_putchar_fd - outputa o caractere c para o file descriptor.
+
